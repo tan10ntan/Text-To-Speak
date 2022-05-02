@@ -8,7 +8,7 @@ import streamlit as st
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"]
 )
-client = texttospeech.Client(credentials=credentials)
+client = texttospeech.TextToSpeechClient(credentials=credentials)
 
 def synthesize_speech(text, lang='日本語',gender='Defalut'):
     gender_type = {
